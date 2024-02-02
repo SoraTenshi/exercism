@@ -13,7 +13,7 @@ pub const ColorBand = enum(u4) {
 };
 
 pub fn colorCode(color: ColorBand) isize {
-    return @enumToInt(color);
+    return @intFromEnum(color);
 }
 
 pub fn colors() []const ColorBand {

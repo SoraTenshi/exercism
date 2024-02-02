@@ -8,7 +8,7 @@ pub fn square(index: isize) ChessboardError!u64 {
         return ChessboardError.IndexOutOfBounds;
     }
 
-    return std.math.powi(u64, 2, @intCast(u64, index) - 1) catch unreachable;
+    return std.math.powi(u64, 2, @as(u64, @intCast(index)) - 1) catch unreachable;
 }
 
 pub fn total() u64 {

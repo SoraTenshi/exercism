@@ -16,8 +16,8 @@ pub fn colorCode(colors: []const ColorBand) anyerror!isize {
     var buf = [_]u8{undefined} ** 2;
     const ascii_adder: u8 = 48;
 
-    for (buf) |*buffer, i| {
-        buffer.* = @enumToInt(colors[i]) + ascii_adder;
+    for (buf, 0..) |*buffer, i| {
+        buffer.* = @intFromEnum(colors[i]) + ascii_adder;
     }
 
     return std.fmt.parseInt(isize, &buf, 0);
